@@ -66,3 +66,7 @@ first_data = {'제목' : data[0]['results'][0]['properties']['제목']['title'][
               '과목' : data[0]['results'][0]['properties']['과목']['multi_select'][0]['name']}
 
 print(first_data)
+
+# 자료구조 자체가 1. 굉장히 큰 리스트 안의 2.딕셔너리 안의 3.또다른 리스트 ...
+# 의 형식으로 진행이 되기 때문에 맨 처음에 data[0]으로 접근을 하고,
+# 또 그다음은 딕셔너리의 'key'로. 그다음은 계속 비슷한 방식으로....
