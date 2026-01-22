@@ -34,7 +34,7 @@ print(is_even_or_odd(0)) # 짝수
 # %%
 def check_fruit(fruit_list, fruit):
     
-    if fruit in fruit_list:
+    if fruit in fruit_list:     #fruit으로 받아온 문자열이 fruits라는 문자열로 받아온 fruit_list 라는 곳에 있니?
         return "있음"
     else:
         return "없음"
@@ -50,7 +50,7 @@ print(check_fruit(fruits, "멜론")) # 있음
 
 # %%
 def key_exists(dic, key):
-    if key in dic:
+    if key in dic:          
         return "존재함"
     else:
         return "존재하지 않음"
@@ -78,8 +78,8 @@ print(key_exists(my_dict, "아티스트"))  # 존재함
 # %%
 def sum_list(lst):
     amount = 0
-    for num in lst:
-        amount+=num
+    for num in lst:           #lst 그자체를 받아왔어. num 을 lst 안에 있는 숫자로 볼거야.
+        amount+=num           # 첫 경우 1 2 3 4 5 를 받아오고, 두번째는 100 200 300 으로 받아올거고, 그걸 차례차례 더할거야.
     return amount
 
 print(sum_list([1,2,3,4,5])) # 15
@@ -106,8 +106,8 @@ print(len_list([])) # 0
 
 # %%
 def print_dict(dic):
-    for i,j in dic.items():
-        print(f" key:{i}/ value:{j}")
+    for i,j in dic.items():           #.items()는 딕셔너리의 키 밸류를 쌍으로 갖고와준다.
+        print(f" key:{i}/ value:{j}") # 그래서 i 랑 j 두개의 변수를 지정해 각각 키 밸류에 넣어준다.
 
 print_dict({"번호" : 1, (1,3,4): "튜플은 키로 사용 가능", 1 : "숫자도 사용 가능"})
 # key : 번호 / value : 1
@@ -155,14 +155,14 @@ print(get_vowels_count("hello my name is minseok")) # 8
 
 # %%
 def char_count(text):
-    save = {}
-    for i in text:
-        if i in save:
-            save[i] +=1
+    save = {}           #우선 딕셔너리를 지정해주고,
+    for i in text:      #i에 가 나 다 가 나 다 를 들고 오는데.
+        if i in save:   #만약 '가' 가 '가나다가나다' 딕셔너리에 있다면.
+            save[i] +=1 # key:'가'를 이미 본 사람이라면 +1
         else :
-            save[i] = 1
+            save[i] = 1 # key:'가' 를 처음봤다면 초기값을 1로 설정해주고
     
-    return save
+    return save         # 계산된 key value 값이 지정된 딕셔너리를 return 해준다.
 
 print(char_count("가나다가나다")) # {'가': 2, '나': 2, '다': 2}
 print(char_count("123123123")) # {'1': 3, '2': 3, '3': 3}
